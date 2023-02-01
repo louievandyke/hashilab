@@ -23,7 +23,7 @@ used Ansible because:
 * Local Virtual Machines (VM) are configured to use Ubuntu 20.04 
   * You can change this by tweaking the [Vagrantfile](/Vagrantfile).  
 
-## Instructions for Ubuntu users only.  Install Vagrant, VirtualBox, Ansible and Python 3.9 seperately.
+## Instructions for Ubuntu users only.  Install Vagrant, VirtualBox, Ansible and Python 3.9 seperately if on a Mac.
 
 1. Install software necessary for bootstrapping the cluster. This will install Vagrant, VirtualBox, Python 3.9, and 
    Ansible. You can skip this step these are already available in your machine. 
