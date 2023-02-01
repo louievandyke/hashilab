@@ -16,14 +16,14 @@ used Ansible because:
 1. I've used Ansible before
 2. I like the idea of idempotent scripts
 
-## Caveats
+## Caveats (note: I've tested this on my macbook and it works)
 
-* This project assumes that you are running Ubuntu OS locally
+* This project assumes that you are running Ubuntu OS locally 
 * This project has only been tested on Ubuntu 20.04
 * Local Virtual Machines (VM) are configured to use Ubuntu 20.04 
   * You can change this by tweaking the [Vagrantfile](/Vagrantfile).  
 
-## Instructions 
+## Instructions for Ubuntu users only.  Install Vagrant, VirtualBox, Ansible and Python 3.9 seperately.
 
 1. Install software necessary for bootstrapping the cluster. This will install Vagrant, VirtualBox, Python 3.9, and 
    Ansible. You can skip this step these are already available in your machine. 
