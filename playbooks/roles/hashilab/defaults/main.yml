@@ -8,7 +8,7 @@ clients:
   - "10.20.20.22"
 
 # NOTE: Replace `Asia/Kolkata` with your timezone
-local_time_zone:    "Asia/Kolkata"
+local_time_zone:    "America/Los_Angeles"
 
 # NOTE: IMPORTANT: Remember to explicitly specify the data center in jobs
 datacenter:         "dc-local"
