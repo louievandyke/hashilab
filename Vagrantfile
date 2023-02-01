@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "server" do |server|
         server.vm.box = LINUX_BASE_BOX
         server.vm.hostname = "server"
-        server.vm.network "private_network", ip: "172.20.20.10"
+        server.vm.network "private_network", ip: "10.20.20.20"
         server.vm.network "forwarded_port", guest: 8500, host: 8500     # Consul UI
         server.vm.network "forwarded_port", guest: 4646, host: 4646     # Nomad UI
 
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
         config.vm.define "client#{n}" do |client|
             client.vm.box = LINUX_BASE_BOX
             client.vm.hostname = "client#{n}"
-            client.vm.network "private_network", ip: "172.20.20.%d" % [20 + n]
+            client.vm.network "private_network", ip: "10.20.20.%d" % [20 + n]
 
             # Configure VM
             client = configureVirtualBox client

@@ -1,11 +1,11 @@
 ---
 # NOTE: IMPORTANT: Keep these values in sync with `Vagrantfile`
 servers:
-  - "172.20.20.10"
+  - "10.20.20.20"
 
 clients:
-  - "172.20.20.21"
-  - "172.20.20.22"
+  - "10.20.20.21"
+  - "10.20.20.22"
 
 # NOTE: Replace `Asia/Kolkata` with your timezone
 local_time_zone:    "Asia/Kolkata"
