@@ -6,7 +6,8 @@
 
 # NOTE: Prefer `bento` to `hashicorp` as the former seems to be more up to date
 # https://app.vagrantup.com/bento
-LINUX_BASE_BOX = "bento/ubuntu-18.04"
+#LINUX_BASE_BOX = "bento/ubuntu-18.04"
+LINUX_BASE_BOX = "bento/ubuntu-22.04"
 
 # NOTE: Architecture
 # Provision one server Virtual Machine (VM), and two client VMs.
