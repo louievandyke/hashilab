@@ -11,7 +11,7 @@ clients:
 local_time_zone:    "America/Los_Angeles"
 
 # NOTE: IMPORTANT: Remember to explicitly specify the data center in jobs
-datacenter:         "dc-local"
+datacenter:         "dc1"
 
 consul_config_dir:  "/etc/consul.d"
 consul_data_dir:    "/var/consul"
