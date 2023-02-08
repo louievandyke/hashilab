@@ -2,7 +2,7 @@
 job "fabio" {
   region      = "global"
   # NOTE: Our local cluster is called `dc-local`
-  datacenters = ["dc-local"]
+  datacenters = ["dc1"]
   # Setting type to system ensures that Fabio is run on all clients.
   type        = "system"
 

@@ -1,18 +1,31 @@
 # Ref: https://learn.hashicorp.com/tutorials/nomad/clustering
 # NOTE: `ansible_eth1` because `eth1` is the name of the interface created via Vagrant
-bind_addr  = "{{ ansible_eth1.ipv4.address }}"
+bind_addr  = "{{ ansible_enp0s8.ipv4.address }}"
 data_dir   = "{{ nomad_data_dir }}"
 datacenter = "{{ datacenter }}"
+enable_debug = true
+
+plugin "raw_exec" {
+  config {
+   enabled = true
+  }
+}
+
+plugin "docker" {
+  config {
+   allow_privileged = true
+   }
+ }
 
 client {
   enabled           = true
-  # // @formatter:off
+   // @formatter:off
   servers           = [{{ servers|map("to_json")|join(", ") }}]
   # // @formatter:on
   # Ref: https://discuss.hashicorp.com/t/internal-routing-problem/34201/5
   # Ref: https://www.nomadproject.io/docs/configuration/client#network_interface
   network_interface = "eth1"
   meta {
-    foo = bar 
+    foo = "bar" 
   }
 }

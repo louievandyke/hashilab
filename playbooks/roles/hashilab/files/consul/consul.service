@@ -1,15 +1,12 @@
 [Unit]
-Description=Consul Startup process
-Requires=network.target
-After=network.target
+Description=consul agent
+Requires=network-online.target
+After=network-online.target
 
 [Service]
-Type=simple
+Restart=on-failure
 ExecStart=/bin/bash -c '/usr/bin/consul agent -config-dir /etc/consul.d/'
-TimeoutStartSec=0
-
-# Make sure consul gracefully leaves the cluster.
-KillSignal=SIGINT
+ExecReload=/bin/kill -HUP $MAINPID
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

@@ -8,3 +8,4 @@
   gather_facts: yes   # NOTE: We'll use to some of them later
   roles:
     - hashilab
+#

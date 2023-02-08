@@ -3,6 +3,10 @@
 bind_addr  = "0.0.0.0"
 data_dir   = "{{ nomad_data_dir }}"
 datacenter = "{{ datacenter }}"
+enable_debug = true
+
+# Increase log verbosity
+log_level = "DEBUG"
 
 advertise {
   http = "{{ servers[0] }}"

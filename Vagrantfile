@@ -7,7 +7,7 @@
 # NOTE: Prefer `bento` to `hashicorp` as the former seems to be more up to date
 # https://app.vagrantup.com/bento
 #LINUX_BASE_BOX = "bento/ubuntu-18.04"
-LINUX_BASE_BOX = "bento/ubuntu-22.04"
+LINUX_BASE_BOX = "ubuntu/jammy64"
 
 # NOTE: Architecture
 # Provision one server Virtual Machine (VM), and two client VMs.
@@ -16,7 +16,7 @@ LINUX_BASE_BOX = "bento/ubuntu-22.04"
 # Consul, Nomad servers will run in the server VM.
 Vagrant.configure("2") do |config|
 
-    # Server VM
+    # Server VMva
     # NOTE: IMPORTANT: Keep ip addresses in sync with `playbooks/roles/hashilab/defaults/main.yml`
     config.vm.define "server" do |server|
         server.vm.box = LINUX_BASE_BOX
@@ -65,12 +65,13 @@ def configureProvisioners(config)
     # Ref: https://www.nomadproject.io/docs/drivers/docker#client-requirements
     # We'll do this using a plugin https://github.com/leighmcculloch/vagrant-docker-compose
     # You can, of course, do this using a shell script, or Ansible
-    config.vagrant.plugins = "vagrant-docker-compose"
-    config.vm.provision :docker
+    #config.vagrant.plugins = "vagrant-docker-compose"
+    #config.vm.provision :docker
 
     # NOTE: Use Ansible to provision the Vagrant box
     # Ref: https://www.vagrantup.com/docs/provisioning/ansible
     config.vm.provision "ansible" do |ansible|
+        ansible.verbose = "v"
         ansible.playbook = "./playbooks/hashilab.yml"
     end
 
